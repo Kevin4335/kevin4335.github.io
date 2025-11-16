@@ -2,7 +2,7 @@
   "name": "my-personal-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kevin4335.github.io/kevin4335.github.io",
+  "homepage": "https://kevin4335.github.io/",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
