@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/kevin4335.github.io/static/css/main.4a7775cd.css",
-    "main.js": "/kevin4335.github.io/static/js/main.ad7c6266.js",
-    "static/media/kevin_headshot.jpg": "/kevin4335.github.io/static/media/kevin_headshot.5b6d0953d761c08439b1.jpg",
-    "static/media/uofmlogo.png": "/kevin4335.github.io/static/media/uofmlogo.7b013ef929d56a02cc7c.png",
-    "static/media/upcancerlogo.png": "/kevin4335.github.io/static/media/upcancerlogo.e628916ca9c8156c1b44.png",
-    "index.html": "/kevin4335.github.io/index.html",
-    "main.4a7775cd.css.map": "/kevin4335.github.io/static/css/main.4a7775cd.css.map",
-    "main.ad7c6266.js.map": "/kevin4335.github.io/static/js/main.ad7c6266.js.map"
+    "main.css": "/static/css/main.4a7775cd.css",
+    "main.js": "/static/js/main.70360105.js",
+    "static/media/kevin_headshot.jpg": "/static/media/kevin_headshot.5b6d0953d761c08439b1.jpg",
+    "static/media/uofmlogo.png": "/static/media/uofmlogo.7b013ef929d56a02cc7c.png",
+    "static/media/upcancerlogo.png": "/static/media/upcancerlogo.e628916ca9c8156c1b44.png",
+    "index.html": "/index.html",
+    "main.4a7775cd.css.map": "/static/css/main.4a7775cd.css.map",
+    "main.70360105.js.map": "/static/js/main.70360105.js.map"
   },
   "entrypoints": [
     "static/css/main.4a7775cd.css",
-    "static/js/main.ad7c6266.js"
+    "static/js/main.70360105.js"
   ]
 }
