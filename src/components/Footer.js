@@ -1,12 +1,14 @@
 import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { colors } from '../colors';
 
 const FooterContainer = styled(Box)({
-  backgroundColor: '#2c3e50',
-  color: '#ecf0f1',
+  backgroundColor: colors.surface,
+  color: colors.light,
   padding: '2rem 0',
   marginTop: 'auto',
+  borderTop: `1px solid ${colors.border}`,
 });
 
 const FooterContent = styled(Box)({
@@ -24,10 +26,10 @@ function Footer() {
     <FooterContainer>
       <Container maxWidth="lg">
         <FooterContent>
-          <Typography variant="body2" sx={{ color: '#bdc3c7' }}>
+          <Typography variant="body2" sx={{ color: colors.textMuted }}>
             © {currentYear} Kevin Chang. All rights reserved.
           </Typography>
-          <Typography variant="body2" sx={{ color: '#bdc3c7' }}>
+          <Typography variant="body2" sx={{ color: colors.textMuted }}>
             Built with React & Material-UI
           </Typography>
         </FooterContent>
@@ -37,4 +39,3 @@ function Footer() {
 }
 
 export default Footer;
-

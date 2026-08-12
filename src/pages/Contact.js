@@ -5,25 +5,28 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { colors } from '../colors';
 
 const PageContainer = styled(Box)({
   minHeight: 'calc(100vh - 64px)',
-  backgroundColor: '#fafafa',
+  backgroundColor: colors.primary,
   padding: '4rem 1rem',
 });
 
 const StyledCard = styled(Card)({
-  backgroundColor: '#ffffff',
+  backgroundColor: colors.surface,
   borderRadius: 0,
-  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+  boxShadow: `0 1px 3px ${colors.shadow}`,
+  borderTop: `3px solid ${colors.secondary}`,
   maxWidth: '900px',
   margin: '0 auto',
 });
 
 const ContactCard = styled(Card)({
-  backgroundColor: '#f8f9fa',
+  backgroundColor: colors.surfaceAlt,
   borderRadius: 0,
-  border: '1px solid #e9ecef',
+  border: `1px solid ${colors.border}`,
+  borderLeft: `3px solid ${colors.accent}`,
   marginBottom: '1rem',
 });
 
@@ -52,14 +55,14 @@ function Contact() {
     <PageContainer>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <Typography variant="h3" component="h1" sx={{ color: '#333', fontWeight: 700, marginBottom: '1rem' }}>
+          <Typography variant="h3" component="h1" sx={{ color: colors.light, fontWeight: 700, marginBottom: '1rem' }}>
             Get In Touch
           </Typography>
         </Box>
 
         <StyledCard>
           <CardContent sx={{ padding: '2rem' }}>
-            <Typography variant="h4" component="h2" sx={{ color: '#2c3e50', marginBottom: '1.5rem' }}>
+            <Typography variant="h4" component="h2" sx={{ color: colors.light, marginBottom: '1.5rem' }}>
               Let's Connect
             </Typography>
 
@@ -67,15 +70,15 @@ function Contact() {
               <CardContent>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <EmailIcon sx={{ color: '#2c3e50', fontSize: '2rem' }} />
+                    <EmailIcon sx={{ color: colors.light, fontSize: '2rem' }} />
                     <Box>
-                      <Typography variant="h6" sx={{ color: '#2c3e50', marginBottom: '0.5rem' }}>
+                      <Typography variant="h6" sx={{ color: colors.light, marginBottom: '0.5rem' }}>
                         Email
                       </Typography>
                       <Typography
                         component="a"
                         href={`mailto:${contactInfo.email}`}
-                        sx={{ color: '#555', textDecoration: 'none' }}
+                        sx={{ color: colors.textMuted, textDecoration: 'none', '&:hover': { color: colors.light } }}
                       >
                         {contactInfo.email}
                       </Typography>
@@ -84,7 +87,7 @@ function Contact() {
                   <Tooltip title={copied.email ? 'Copied!' : 'Copy email'}>
                     <IconButton
                       onClick={() => handleCopy('email', contactInfo.email)}
-                      sx={{ color: '#2c3e50' }}
+                      sx={{ color: colors.textMuted, '&:hover': { color: colors.light } }}
                     >
                       <ContentCopyIcon />
                     </IconButton>
@@ -97,9 +100,9 @@ function Contact() {
               <CardContent>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <LinkedInIcon sx={{ color: '#2c3e50', fontSize: '2rem' }} />
+                    <LinkedInIcon sx={{ color: colors.light, fontSize: '2rem' }} />
                     <Box>
-                      <Typography variant="h6" sx={{ color: '#2c3e50', marginBottom: '0.5rem' }}>
+                      <Typography variant="h6" sx={{ color: colors.light, marginBottom: '0.5rem' }}>
                         LinkedIn
                       </Typography>
                       <Typography
@@ -107,7 +110,7 @@ function Contact() {
                         href={contactInfo.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={{ color: '#555', textDecoration: 'none' }}
+                        sx={{ color: colors.textMuted, textDecoration: 'none', '&:hover': { color: colors.light } }}
                       >
                         {contactInfo.linkedin}
                       </Typography>
@@ -116,7 +119,7 @@ function Contact() {
                   <Tooltip title={copied.linkedin ? 'Copied!' : 'Copy LinkedIn'}>
                     <IconButton
                       onClick={() => handleCopy('linkedin', contactInfo.linkedin)}
-                      sx={{ color: '#2c3e50' }}
+                      sx={{ color: colors.textMuted, '&:hover': { color: colors.light } }}
                     >
                       <ContentCopyIcon />
                     </IconButton>
@@ -129,9 +132,9 @@ function Contact() {
               <CardContent>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <GitHubIcon sx={{ color: '#2c3e50', fontSize: '2rem' }} />
+                    <GitHubIcon sx={{ color: colors.light, fontSize: '2rem' }} />
                     <Box>
-                      <Typography variant="h6" sx={{ color: '#2c3e50', marginBottom: '0.5rem' }}>
+                      <Typography variant="h6" sx={{ color: colors.light, marginBottom: '0.5rem' }}>
                         GitHub
                       </Typography>
                       <Typography
@@ -139,7 +142,7 @@ function Contact() {
                         href={contactInfo.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={{ color: '#555', textDecoration: 'none' }}
+                        sx={{ color: colors.textMuted, textDecoration: 'none', '&:hover': { color: colors.light } }}
                       >
                         {contactInfo.github}
                       </Typography>
@@ -148,7 +151,7 @@ function Contact() {
                   <Tooltip title={copied.github ? 'Copied!' : 'Copy GitHub'}>
                     <IconButton
                       onClick={() => handleCopy('github', contactInfo.github)}
-                      sx={{ color: '#2c3e50' }}
+                      sx={{ color: colors.textMuted, '&:hover': { color: colors.light } }}
                     >
                       <ContentCopyIcon />
                     </IconButton>

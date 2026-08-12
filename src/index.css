@@ -5,11 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
-  color: #333;
+  background-color: rgb(58, 98, 137);
+  color: rgb(250, 229, 214);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  color: rgb(250, 229, 214);
+  text-decoration-color: rgba(250, 229, 214, 0.5);
+}
+
+a:hover {
+  color: rgba(250, 229, 214, 0.85);
 }
