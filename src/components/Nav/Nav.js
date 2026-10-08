@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { navLinks, profile } from '../../data/content';
 import { CloseIcon, MenuIcon } from '../Icons';
+import VeinProgress from '../VeinProgress/VeinProgress';
 import useActiveSection from './useActiveSection';
 import styles from './Nav.module.css';
 
@@ -59,6 +60,7 @@ function Nav() {
           ))}
         </ul>
       </nav>
+      <VeinProgress />
     </header>
   );
 }

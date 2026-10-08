@@ -1,0 +1,53 @@
+/* Sits exactly on the nav's bottom border and replaces its color */
+.root {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--border-w) * -1);
+  height: var(--border-w);
+  pointer-events: none;
+}
+
+.track,
+.fill {
+  position: absolute;
+  inset: 0;
+}
+
+.track {
+  background: var(--steel);
+}
+
+.fill {
+  background: var(--ink);
+  transform-origin: left;
+}
+
+/* Side veins branch from the rib toward the right (the direction of growth) */
+.vein {
+  position: absolute;
+  width: 14px;
+  height: 10px;
+  overflow: visible;
+}
+
+.vein path {
+  fill: none;
+  stroke: var(--steel);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  transition: stroke 300ms var(--ease-liquid);
+}
+
+.above {
+  bottom: 50%;
+}
+
+.below {
+  top: 50%;
+  scale: 1 -1;
+}
+
+.lit path {
+  stroke: var(--ink);
+}
