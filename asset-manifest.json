@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.4d6b9cc5.css",
-    "main.js": "/static/js/main.cf8b1e9e.js",
+    "main.css": "/static/css/main.c09f676c.css",
+    "main.js": "/static/js/main.35169cf7.js",
     "static/media/hero-bg.webp": "/static/media/hero-bg.dcc7f8ed7f0e15ee3b4b.webp",
     "static/media/me.jpg": "/static/media/me.5b6d0953d761c08439b1.jpg",
     "static/media/rocket_logo.png": "/static/media/rocket_logo.50d085ce1d72f6e7b8bc.png",
     "static/media/uofmlogo.png": "/static/media/uofmlogo.7b013ef929d56a02cc7c.png",
     "static/media/upcancerlogo.png": "/static/media/upcancerlogo.e628916ca9c8156c1b44.png",
     "index.html": "/index.html",
-    "main.4d6b9cc5.css.map": "/static/css/main.4d6b9cc5.css.map",
-    "main.cf8b1e9e.js.map": "/static/js/main.cf8b1e9e.js.map"
+    "main.c09f676c.css.map": "/static/css/main.c09f676c.css.map",
+    "main.35169cf7.js.map": "/static/js/main.35169cf7.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d6b9cc5.css",
-    "static/js/main.cf8b1e9e.js"
+    "static/css/main.c09f676c.css",
+    "static/js/main.35169cf7.js"
   ]
 }
