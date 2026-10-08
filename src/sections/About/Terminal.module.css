@@ -1,0 +1,133 @@
+.terminal {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid var(--steel);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  font-size: var(--fs-xs);
+  line-height: 1.55;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--elevated);
+  color: var(--muted);
+}
+
+.dots {
+  display: flex;
+  gap: 5px;
+}
+
+.dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--steel);
+}
+
+/* Fixed height (or the parent-given height): output scrolls instead of shifting the layout */
+.body {
+  position: relative; /* offset parent for scrolling to the latest entry */
+  container-type: inline-size;
+  height: 11rem;
+  padding: var(--space-3);
+  overflow-y: auto;
+  cursor: text;
+}
+
+.hint {
+  color: var(--muted);
+}
+
+.entry + .entry {
+  margin-top: var(--space-2);
+}
+
+.out {
+  color: var(--steel-light);
+  overflow-wrap: anywhere;
+}
+
+/* ASCII art: 100 mono columns scaled to the terminal's width (Space Mono glyphs ≈ 0.61em) */
+.art {
+  margin: var(--space-2) 0 0;
+  color: var(--steel-light);
+  font-family: var(--font-mono);
+  font-size: calc(100cqi / 63);
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: pre;
+  overflow: hidden;
+}
+
+.ps1 {
+  color: var(--steel-light);
+}
+
+.prompt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  caret-color: var(--steel-light);
+}
+
+.input:focus {
+  outline: none;
+}
+
+/* the terminal as a whole shows focus instead */
+.terminal:focus-within {
+  border-color: var(--steel-light);
+}
+
+/* Matches the About two-column breakpoint */
+@media (min-width: 900px) {
+  .fill .body {
+    flex: 1 1 0;
+    height: auto;
+    min-height: 7rem;
+    /* size from the available space only, never from the output, so it scrolls instead of growing */
+    contain: size;
+  }
+}
+
+.quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3) var(--space-3);
+  border-top: 1px solid var(--elevated);
+}
+
+.quickBtn {
+  padding: 2px var(--space-2);
+  border: 1px solid var(--steel);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--steel-light);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.quickBtn:hover {
+  border-color: var(--steel-light);
+  background: var(--plum);
+  color: var(--ink);
+}

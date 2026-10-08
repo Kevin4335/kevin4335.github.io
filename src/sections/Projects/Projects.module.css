@@ -1,0 +1,124 @@
+.grid {
+  display: grid;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cell {
+  display: flex;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-6);
+  transition: translate var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.card:hover,
+.card:focus-within {
+  translate: -3px -3px;
+  box-shadow: var(--shadow);
+}
+
+.context {
+  color: var(--steel-light);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.name {
+  font-size: var(--fs-xl);
+  line-height: 1.05;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  text-decoration: none;
+}
+
+/* Whole card is clickable via the title link */
+.cardLink::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.cardLink:focus-visible {
+  outline: none;
+}
+
+.card:has(.cardLink:focus-visible) {
+  outline: 3px solid var(--glow);
+  outline-offset: 3px;
+}
+
+.arrow {
+  flex-shrink: 0;
+  margin-top: 0.15em;
+  transition: translate var(--dur) var(--ease);
+}
+
+.card:hover .arrow {
+  translate: 2px -2px;
+}
+
+.description {
+  flex: 1;
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+
+/* Sits above the full-card link overlay so it stays clickable */
+.extraLinks {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Featured card: plum fill with a resting shadow */
+.featured {
+  border-color: var(--steel-light);
+  box-shadow: var(--shadow);
+}
+
+.featured .description {
+  color: var(--ink);
+}
+
+.featured .tag {
+  border-color: var(--steel);
+  background: transparent;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featuredCell {
+    grid-column: 1 / -1;
+  }
+}

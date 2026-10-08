@@ -1,0 +1,15 @@
+.footer {
+  border-top: var(--border);
+  background: var(--bg);
+  font-size: var(--fs-xs);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-5);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

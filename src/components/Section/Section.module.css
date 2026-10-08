@@ -1,0 +1,29 @@
+.section {
+  border-top: var(--border);
+}
+
+.inner {
+  padding-block: var(--section-y);
+}
+
+.header {
+  margin-bottom: var(--space-7);
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  padding: var(--space-1) var(--space-3);
+  border: var(--border-w) solid var(--steel);
+  border-radius: var(--r-pill);
+  background: var(--plum);
+  color: var(--steel-light);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.title {
+  font-size: var(--fs-h2);
+}

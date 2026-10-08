@@ -1,0 +1,9 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--bg);
+  background-image: radial-gradient(rgba(237, 232, 226, 0.04) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}

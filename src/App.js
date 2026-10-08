@@ -1,25 +1,33 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import About from './pages/About';
-import Experience from './pages/Experience';
-import Contact from './pages/Contact';
-import './App.css';
+import { MotionConfig } from 'framer-motion';
+import Background from './components/Background/Background';
+import Nav from './components/Nav/Nav';
+import Hero from './sections/Hero/Hero';
+import About from './sections/About/About';
+import Experience from './sections/Experience/Experience';
+import Projects from './sections/Projects/Projects';
+import Skills from './sections/Skills/Skills';
+import Contact from './sections/Contact/Contact';
+import Footer from './sections/Footer/Footer';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    // reducedMotion="user" drops transform animations when the OS asks for reduced motion
+    <MotionConfig reducedMotion="user">
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
+      <Background />
+      <Nav />
+      <main id="main">
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
+      <Footer />
+    </MotionConfig>
   );
 }
 

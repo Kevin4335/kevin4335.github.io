@@ -1,0 +1,83 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-7);
+  border: 2px solid var(--steel);
+  border-radius: var(--r-lg);
+  text-decoration: none;
+  transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+
+.card:hover {
+  border-color: var(--steel-light);
+  background: var(--surface);
+}
+
+/* The little page sits tilted and straightens + lifts on hover */
+.icon {
+  width: 72px;
+  height: auto;
+  overflow: visible;
+  rotate: -8deg;
+  transition: rotate 300ms var(--ease-liquid), translate 300ms var(--ease-liquid);
+}
+
+.card:hover .icon,
+.card:focus-visible .icon {
+  rotate: 0deg;
+  translate: 0 -4px;
+}
+
+.page {
+  fill: var(--ink);
+  stroke: var(--steel-light);
+  stroke-width: 2;
+}
+
+.fold {
+  fill: none;
+  stroke: var(--steel-light);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.accent {
+  fill: var(--plum);
+}
+
+.line {
+  fill: var(--steel-light);
+}
+
+.badge {
+  fill: var(--plum);
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.arrow {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.title {
+  font-weight: 600;
+}
+
+.meta {
+  color: var(--steel-light);
+  font-size: var(--fs-xs);
+}

@@ -1,0 +1,63 @@
+:root {
+  /* Cool near-black neutrals */
+  --bg: #090a0f;
+  --surface: #10121a;
+  --elevated: #191c27;
+  --steel: #4b5568; /* card shadows, subtle rules */
+  --steel-light: #a5afc2;
+  --ink: #ede8e2;
+  --muted: #838ba0;
+  --plum: #2a2236; /* rare use */
+
+  /* Coral accents — the only bright colors; use sparingly */
+  --glow: #ffb48f;
+  --sun: #f28b66;
+  --sun-deep: #c8402a; /* thin lines and 2px accents, not large fills */
+  --on-sun: #090a0f; /* text on glow / sun fills */
+
+  /* Lines and hard shadows (never blurred) */
+  --border-w: 3px;
+  --border: var(--border-w) solid var(--ink);
+  --hairline: 1px solid var(--elevated);
+  --shadow: 6px 6px 0 var(--steel);
+  --shadow-sm: 4px 4px 0 var(--steel);
+
+  /* Radius scale */
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-pill: 999px;
+
+  /* Typography */
+  --font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: clamp(1.0625rem, 0.4vw + 1rem, 1.25rem);
+  --fs-xl: clamp(1.375rem, 1.2vw + 1rem, 1.75rem);
+  --fs-h2: clamp(2.25rem, 6vw, 4.5rem);
+  --fs-hero: clamp(3rem, 8.5vw, 7rem);
+  --lh-display: 1.02;
+  --lh-body: 1.6;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --section-y: clamp(4rem, 9vw, 7rem);
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --container: 1200px;
+  --nav-h: 64px;
+
+  /* Motion */
+  --dur: 120ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --ease-liquid: cubic-bezier(0.2, 0.8, 0.2, 1);
+}

@@ -1,0 +1,120 @@
+.hero {
+  /* Panel shape: one straight cut from the top-right down to the bottom-middle */
+  --cut: polygon(0 0, 100% 0, 100% 84%, 0 100%);
+
+  position: relative;
+  display: grid;
+  overflow: clip;
+  /* mobile: a band of image shows under the slanted bottom edge */
+  padding-bottom: clamp(9rem, 45vw, 13rem);
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  /* matches the photo's near-black edges so the contained image has no seams */
+  background: #0c0b12;
+}
+
+/* Mobile: covers the band (plus the slant above it), framed on the leaf */
+.image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(clamp(9rem, 45vw, 13rem) + 7rem);
+  object-fit: cover;
+  object-position: 50% 55%;
+}
+
+.backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 10, 15, 0.06);
+}
+
+.edge,
+.panel {
+  grid-area: 1 / 1;
+  clip-path: var(--cut);
+}
+
+/* Same shape, offset = a thin steel line along the cut */
+.edge {
+  position: relative;
+  background: var(--steel-light);
+  translate: 2px 2px;
+}
+
+.panel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-block: clamp(3.5rem, 10vh, 6rem) clamp(4.5rem, 16vw, 7rem);
+  background: var(--bg);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: var(--fs-hero);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+/* Quiet two-tone name */
+.highlight {
+  color: var(--steel-light);
+}
+
+.role {
+  color: var(--steel-light);
+  font-size: var(--fs-lg);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    --cut: polygon(0 0, 68% 0, 48% 100%, 0 100%);
+
+    min-height: calc(100svh - var(--nav-h));
+    padding-bottom: 0;
+  }
+
+  /* Desktop: the whole photo, uncropped, in the open right side; edges fade into the backdrop */
+  .image {
+    top: 0;
+    right: clamp(0rem, 4vw, 5rem);
+    left: auto;
+    width: auto;
+    height: 100%;
+    aspect-ratio: 2 / 3; /* the photo's own ratio: shown whole, no crop */
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+  }
+
+  .panel {
+    padding-block: var(--space-8);
+  }
+
+  /* keep the text clear of the diagonal */
+  .role,
+  .actions {
+    max-width: 52%;
+  }
+}

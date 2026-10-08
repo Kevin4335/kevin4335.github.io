@@ -1,0 +1,121 @@
+.grid {
+  display: grid;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  max-width: 352px;
+}
+
+/* Photo with a flat plum block offset behind it */
+.frame {
+  position: relative;
+  isolation: isolate;
+  max-width: 340px;
+  margin: 0 12px 12px 0;
+}
+
+.frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: var(--border-w) solid var(--steel);
+  border-radius: var(--r-md);
+  background: var(--plum);
+  translate: 12px 12px;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: var(--border);
+  border-radius: var(--r-md);
+  /* striped fallback while loading / if missing */
+  background: repeating-linear-gradient(-45deg, var(--elevated) 0 10px, var(--surface) 10px 20px);
+}
+
+.textCol {
+  min-width: 0;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 68ch;
+  font-size: var(--fs-lg);
+}
+
+.bio p + p {
+  color: var(--muted);
+}
+
+.label {
+  margin: var(--space-7) 0 var(--space-2);
+  color: var(--steel-light);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.facts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fact {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
+  border-bottom: var(--hairline);
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  border-radius: var(--r-sm);
+  background: #fff;
+  object-fit: contain;
+}
+
+.school {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.degree {
+  margin-top: var(--space-1);
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+
+.detail {
+  margin-top: var(--space-2);
+  color: var(--steel-light);
+  font-size: var(--fs-xs);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 4fr 8fr;
+    gap: var(--space-8);
+    /* left column matches the text column's height */
+    align-items: stretch;
+  }
+
+  /* terminal fills the rest, so its bottom meets the last education divider */
+  .terminal {
+    flex: 1 1 0;
+  }
+}
