@@ -6,8 +6,9 @@ import styles from './Button.module.css';
  * size: 'md' | 'sm' | 'icon'
  */
 function Button({ as: Tag = 'a', variant = 'primary', size = 'md', className = '', children, ...rest }) {
+  const classes = [styles.button, styles[variant], styles[size], className];
   return (
-    <Tag className={`${styles.button} ${styles[variant]} ${styles[size]} ${className}`} {...rest}>
+    <Tag className={classes.filter(Boolean).join(' ')} {...rest}>
       <span className={styles.label}>{children}</span>
     </Tag>
   );

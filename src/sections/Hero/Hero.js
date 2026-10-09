@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import heroBg from '../../assets/hero-bg.webp';
 import { profile } from '../../data/content';
 import Button from '../../components/Button/Button';
@@ -7,11 +9,18 @@ function Hero() {
   const words = profile.name.split(' ');
   const lastWord = words.pop();
 
+  // Scroll-linked depth: the image drifts slightly slower than the page as the hero scrolls away.
+  const heroRef = useRef(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
+  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '60%']);
+  const imageStyle = reduceMotion ? undefined : { y: imageY };
+
   return (
-    <section id="top" className={styles.hero} aria-labelledby="hero-heading">
+    <section ref={heroRef} id="top" className={styles.hero} aria-labelledby="hero-heading">
       {/* Back layer: full-bleed image, revealed by the panel's diagonal cut */}
       <div className={styles.backdrop} aria-hidden="true">
-        <img src={heroBg} alt="" className={styles.image} />
+        <motion.img src={heroBg} alt="" className={styles.image} style={imageStyle} />
       </div>
 
       {/* Front layer: solid panel; the ink copy behind it outlines the cut */}
@@ -19,13 +28,13 @@ function Hero() {
       <div className={styles.panel}>
         <div className={`container ${styles.content}`}>
           <h1 id="hero-heading" className={styles.name}>
-            <span>{words.join(' ')} </span>
+            <span className={styles.first}>{words.join(' ')} </span>
             <span className={styles.highlight}>{lastWord}</span>
           </h1>
           <p className={`mono ${styles.role}`}>{profile.role}</p>
           <div className={styles.actions}>
-            <Button href="#experience">Experience</Button>
-            <Button href="#contact" variant="secondary">
+            <Button href="#experience" className={styles.button}>Experience</Button>
+            <Button href="#contact" variant="secondary" className={styles.button}>
               Get In Touch
             </Button>
           </div>

@@ -1,5 +1,5 @@
 .footer {
-  border-top: var(--border);
+  border-top: var(--border-w) solid var(--plum);
   background: var(--bg);
   font-size: var(--fs-xs);
 }

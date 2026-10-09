@@ -37,22 +37,32 @@
 .edge,
 .panel {
   grid-area: 1 / 1;
-  clip-path: var(--cut);
 }
 
-/* Same shape, offset = a thin steel line along the cut */
+/* Same shape, offset = a thin plum line along the cut */
 .edge {
   position: relative;
-  background: var(--steel-light);
+  background: var(--plum);
   translate: 2px 2px;
+  clip-path: var(--cut);
 }
 
 .panel {
   position: relative;
+  isolation: isolate;
   display: flex;
   align-items: center;
   padding-block: clamp(3.5rem, 10vh, 6rem) clamp(4.5rem, 16vw, 7rem);
+}
+
+/* The cut lives on ::before (not the panel) so the name can spill past it */
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: var(--bg);
+  clip-path: var(--cut);
 }
 
 .content {
@@ -66,31 +76,45 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: var(--fs-hero);
-  line-height: 1;
-  letter-spacing: -0.045em;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(4.5rem, 13vw, 12rem);
+  font-weight: 600;
+  font-optical-sizing: auto;
+  font-variation-settings: 'SOFT' 100;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
 }
 
-/* Quiet two-tone name */
+/* Two-tone name; the italic surname picks up the photo's coral bokeh and steps right, over the cut */
 .highlight {
-  color: var(--steel-light);
+  position: relative;
+  color: var(--sun);
+  font-style: italic;
+  font-weight: 500;
+  text-shadow: 0 2px 24px rgba(9, 10, 15, 0.6);
 }
 
 .role {
-  color: var(--steel-light);
+  color: var(--ink);
   font-size: var(--fs-lg);
+}
+
+/* Wider pills than the default */
+.button {
+  min-width: 11rem;
+  padding-inline: 2.25em;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-4);
+  gap: var(--space-7);
   margin-top: var(--space-2);
 }
 
 @media (min-width: 1024px) {
   .hero {
-    --cut: polygon(0 0, 68% 0, 48% 100%, 0 100%);
+    --cut: polygon(0 0, 75% 0, 25% 100%, 0 100%);
 
     min-height: calc(100svh - var(--nav-h));
     padding-bottom: 0;
@@ -112,9 +136,28 @@
     padding-block: var(--space-8);
   }
 
-  /* keep the text clear of the diagonal */
+  /* Slight indent so the first name doesn't sit flush with the role and buttons */
+  .first {
+    margin-left: 0.25em;
+  }
+
+  /* Stagger: the surname drops a little and steps well right of the first name */
+  .name {
+    row-gap: 0.12em;
+  }
+
+  .highlight {
+    margin-left: 3.25em;
+  }
+
+  /* Name block, role and buttons all centered on the page; the name keeps its stagger inside */
+  .name,
   .role,
   .actions {
-    max-width: 52%;
+    align-self: center;
+  }
+
+  .actions {
+    justify-content: center;
   }
 }

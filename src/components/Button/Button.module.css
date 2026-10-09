@@ -85,6 +85,7 @@
 @media (prefers-reduced-motion: reduce) {
   .secondary::before {
     transition: none;
+    animation: none;
   }
 
   .button:active {

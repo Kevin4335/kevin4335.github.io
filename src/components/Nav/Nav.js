@@ -6,10 +6,12 @@ import useActiveSection from './useActiveSection';
 import styles from './Nav.module.css';
 
 const sectionIds = navLinks.map((link) => link.id);
+// The hero ('top') is watched too, so no link is marked current while it's in view
+const watchedIds = ['top', ...sectionIds];
 
 function Nav() {
   const [open, setOpen] = useState(false);
-  const active = useActiveSection(sectionIds);
+  const active = useActiveSection(watchedIds);
 
   useEffect(() => {
     if (!open) return undefined;
