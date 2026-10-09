@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.c09f676c.css",
-    "main.js": "/static/js/main.35169cf7.js",
+    "main.css": "/static/css/main.de452272.css",
+    "main.js": "/static/js/main.4b6fcf39.js",
     "static/media/hero-bg.webp": "/static/media/hero-bg.dcc7f8ed7f0e15ee3b4b.webp",
     "static/media/me.jpg": "/static/media/me.5b6d0953d761c08439b1.jpg",
     "static/media/rocket_logo.png": "/static/media/rocket_logo.50d085ce1d72f6e7b8bc.png",
     "static/media/uofmlogo.png": "/static/media/uofmlogo.7b013ef929d56a02cc7c.png",
     "static/media/upcancerlogo.png": "/static/media/upcancerlogo.e628916ca9c8156c1b44.png",
     "index.html": "/index.html",
-    "main.c09f676c.css.map": "/static/css/main.c09f676c.css.map",
-    "main.35169cf7.js.map": "/static/js/main.35169cf7.js.map"
+    "main.de452272.css.map": "/static/css/main.de452272.css.map",
+    "main.4b6fcf39.js.map": "/static/js/main.4b6fcf39.js.map"
   },
   "entrypoints": [
-    "static/css/main.c09f676c.css",
-    "static/js/main.35169cf7.js"
+    "static/css/main.de452272.css",
+    "static/js/main.4b6fcf39.js"
   ]
 }
