@@ -1,6 +1,5 @@
 import { about, education, profile } from '../../data/content';
 import Section from '../../components/Section/Section';
-import Terminal from './Terminal';
 import styles from './About.module.css';
 
 function About() {
@@ -11,7 +10,6 @@ function About() {
           <figure className={styles.frame}>
             <img src={profile.headshot} alt={profile.name} width="800" height="800" className={styles.photo} />
           </figure>
-          <Terminal fill className={styles.terminal} />
         </div>
 
         <div className={styles.textCol}>

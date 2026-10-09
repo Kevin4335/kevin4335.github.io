@@ -110,12 +110,5 @@
   .grid {
     grid-template-columns: 4fr 8fr;
     gap: var(--space-8);
-    /* left column matches the text column's height */
-    align-items: stretch;
-  }
-
-  /* terminal fills the rest, so its bottom meets the last education divider */
-  .terminal {
-    flex: 1 1 0;
   }
 }
