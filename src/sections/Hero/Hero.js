@@ -3,6 +3,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion
 import heroBg from '../../assets/hero-bg.webp';
 import { profile } from '../../data/content';
 import Button from '../../components/Button/Button';
+import HeroVeins from './HeroVeins';
 import styles from './Hero.module.css';
 
 function Hero() {
@@ -13,7 +14,7 @@ function Hero() {
   const heroRef = useRef(null);
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
-  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '60%']);
+  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   const imageStyle = reduceMotion ? undefined : { y: imageY };
 
   return (
@@ -26,6 +27,7 @@ function Hero() {
       {/* Front layer: solid panel; the ink copy behind it outlines the cut */}
       <span className={styles.edge} aria-hidden="true" />
       <div className={styles.panel}>
+        <HeroVeins />
         <div className={`container ${styles.content}`}>
           <h1 id="hero-heading" className={styles.name}>
             <span className={styles.first}>{words.join(' ')} </span>

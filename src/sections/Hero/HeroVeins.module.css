@@ -1,0 +1,48 @@
+/* Sits on the panel's solid fill, clipped to the same cut so it never crosses onto the photo */
+.root {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  clip-path: var(--cut);
+  pointer-events: none;
+  /* Fades out toward the copy so the name stays the focus */
+  -webkit-mask-image: linear-gradient(90deg, #000 10%, transparent 70%);
+  mask-image: linear-gradient(90deg, #000 10%, transparent 70%);
+}
+
+.svg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  aspect-ratio: 3 / 4;
+  overflow: visible;
+}
+
+.vein,
+.midrib {
+  fill: none;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.vein {
+  stroke: var(--steel);
+  stroke-width: 1;
+  opacity: 0.45;
+}
+
+/* The photo's coral midrib, echoed */
+.midrib {
+  stroke: var(--sun-deep);
+  stroke-width: 1.5;
+  opacity: 0.7;
+}
+
+@media (min-width: 1024px) {
+  .root {
+    -webkit-mask-image: linear-gradient(90deg, #000 15%, transparent 45%);
+    mask-image: linear-gradient(90deg, #000 15%, transparent 45%);
+  }
+}
